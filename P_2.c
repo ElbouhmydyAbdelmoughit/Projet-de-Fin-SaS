@@ -80,21 +80,39 @@ void Menu()
                             if (temp == 1)
                             {
                                 printf("entrez un Montant de retrait ");
-                                scanf("%f",&dh);
+                                scanf("%i",&dh);
                                 if (dh > compte[nbr].Montant)
                                 {
-                                    printf("");
+                                    printf("Entrez un nombre de retrait infiriouer :");
                                 }
                                 else
                                 {
                                     compte[nbr].Montant -= dh;
-                                    printf("le Montant apres le retrait est :"compte[nbr].Montant);
+                                    printf("le Montant apres le retrait est %f :",compte[nbr].Montant);
                                 }
                                 
                             }
                     break;
-				
+                           
+                                   
+                                
 					case 2:
+                             recherche();
+                            if (temp == 1)
+                            {
+                                printf("entrez un Montant de retrait ");
+                                scanf("%i",&dh);
+                                if (dh<0)
+                                {
+                                    printf("entrez un nombre sepirieuor de 0");
+                                }
+                                else 
+                                {
+                                     compte[nbr].Montant += dh;
+                                    printf("le Montant apres le retrait est%f :",compte[nbr].Montant);
+                                }
+                                
+                            }   
                     break;     
 			    }   	
         break;    
@@ -133,13 +151,13 @@ void Menu()
 
                     break;
                     case 3:
-
+                            recherche();
                     break;
                    
                 }
         break;  
         case 4:
-
+                
         break;  
         case 5:
                system("cls");
@@ -176,16 +194,16 @@ void Cree_Compte()
 void recherche()
 {
     char CN[15];
-    int temp;
+    
     printf("Donnerr votre CIN :\n");
     scanf("%s",CN);
     for ( i = 0; i < nbr; i++)
     {
-        if (strcmp(compte[nbr].Montant,CN)==0)
+        if (strcmp(compte[nbr].CIN,CN)==0)
         {
             temp = 1;
         }
-        if (temp == 1)
+         else if (temp == 1)
         {
             printf("%s %s %s %.2f DH \n",compte[i].CIN,compte[i].Nom,compte[i].Prenom,compte[i].Montant);
         }
