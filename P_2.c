@@ -79,19 +79,30 @@ void Menu()
                             recherche();
                             if (temp == 1)
                             {
-                                printf("entrez un Montant de retrait ");
-                                scanf("%i",&dh);
-                                if (dh > compte[nbr].Montant)
-                                {
-                                    printf("Entrez un nombre de retrait infiriouer :");
-                                }
-                                else
-                                {
-                                    compte[nbr].Montant -= dh;
-                                    printf("le Montant apres le retrait est %f :",compte[nbr].Montant);
-                                }
+                                    printf("entrez un Montant de retrait :\n");
+                                    scanf("%i",&dh);
+                                    if (dh > compte[nbr].Montant)
+                                    {
+                                        printf("Entrez un nombre de retrait infiriouer :");
+                                    }
+                                    else
+                                    {
+                                        compte[nbr].Montant -= dh;
+                                        printf("le Montant apres le retrait est %f :",compte[nbr].Montant);
+                                    }
                                 
                             }
+                                    printf("\nPour Reteur le Menu Principal Tapez 1 Pour Quitter Programme Tapez 2 : \n");
+                                    scanf("%d",&VR);
+                                    if(VR==1)
+                                    {
+                                        Menu();
+                                    }
+                                    else 
+                                    {
+                                        printf("Merci");
+                                        system("cls");
+                                    }
                     break;
                            
                                    
@@ -100,20 +111,26 @@ void Menu()
                              recherche();
                             if (temp == 1)
                             {
-                                printf("entrez un Montant de retrait ");
+                                printf("entrez un Montant de Depot :\n ");
                                 scanf("%i",&dh);
-                                if (dh<0)
-                                {
-                                    printf("entrez un nombre sepirieuor de 0");
-                                }
-                                else 
-                                {
+                               
                                      compte[nbr].Montant += dh;
-                                    printf("le Montant apres le retrait est%f :",compte[nbr].Montant);
-                                }
+                                    printf("le Montant apres le depot  est :\n%f :",compte[nbr].Montant);
+                                
                                 
                             }   
-                    break;     
+                    break;   
+                            printf("\nPour Reteur le Menu Principal Tapez 1 Pour Quitter Programme Tapez 2 : \n");
+                            scanf("%d",&VR);
+                            if(VR==1)
+                            {
+                                Menu();
+                            }
+                            else 
+                            {
+                                printf("Merci");
+                                system("cls");
+                            }  
 			    }   	
         break;    
         case 3:
@@ -140,11 +157,19 @@ void Menu()
                                for ( i = 0; i < nbr; i++)
                                {
                                    printf("%f",compte[i].Montant);
-                               }
-                               
-                            
-                               
+                               }                          
                            }
+                                printf("\nPour Reteur le Menu Principal Tapez 1 Pour Quitter Programme Tapez 2 : \n");
+                                scanf("%d",&VR);
+                                if(VR==1)
+                                {
+                                    Menu();
+                                }
+                                else 
+                                {
+                                    printf("Merci");
+                                    system("cls");
+                                }
                            
                     break;
                     case 2:
